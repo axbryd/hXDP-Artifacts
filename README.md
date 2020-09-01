@@ -1,4 +1,10 @@
-Artifacts for "hXDP: Efficient Software Packet Processing on FPGA NICs"
+Artifacts for "hXDP: Efficient Software Packet Processing on FPGA NICs".
+
+To clone this repo:
+```(bash)
+$ git clone https://github.com/axbryd/hXDP-Artifacts.git
+$ git checkout camera-ready
+```
 
 # Overview
 * Getting Started (10 human-minutes + 5 compute-minutes)
