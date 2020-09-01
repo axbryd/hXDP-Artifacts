@@ -3,7 +3,6 @@ Artifacts for "hXDP: Efficient Software Packet Processing on FPGA NICs".
 To clone this repo:
 ```(bash)
 $ git clone https://github.com/axbryd/hXDP-Artifacts.git
-$ git checkout camera-ready
 ```
 
 # Overview
