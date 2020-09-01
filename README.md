@@ -6,11 +6,12 @@ $ git clone https://github.com/axbryd/hXDP-Artifacts.git
 ```
 
 # Overview
-* Getting Started (10 human-minutes + 5 compute-minutes)
-* Program the NetFPGA-SUME (2 human-minutes + 1 compute-hour)
-* Microbenchmark validation (5 human-minutes + 3 compute-hours) 
-* Examples optimization (30 human-minutes + 5 compute-minutes)
-* Examples validation (20 human-minutes)
+* Getting Started 
+* XDP results validation
+* Program the NetFPGA-SUME 
+* hXDP Microbenchmark validation
+* Examples optimization
+* hXDP examples validation
 
 # Getting Started (10 human-minutes + 5 compute-minutes)
 In this section, we will depict the hardware and software infrastructure needed to validate the results on the paper.
