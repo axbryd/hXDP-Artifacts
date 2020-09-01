@@ -20,4 +20,9 @@ The two boards need to be conncted back-back-to-back
 ## Software Requirements
 * Ubuntu 16.04 LTS (any newer LTS version of Ubuntu should do the job)
 * The NetFPGA SUME development environment following the information available at https://github.com/NetFPGA/NetFPGA-SUME-public/wiki
-* The 
+* Xilinx Vivado Design Suite 2016.4 (for programming tools)
+* Data Plane Development Kit, tutorial [here](https://doc.dpdk.org/guides/linux_gsg/intro.html)
+* Moongen Packet Generator, tutorial [here](https://github.com/emmericp/MoonGen)
+
+# Build Stuff (2 human-minutes + 1 compute-hour)
+* Navigate 
