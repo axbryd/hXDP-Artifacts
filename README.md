@@ -30,3 +30,5 @@ The two boards need to be conncted back-back-to-back
 * Data Plane Development Kit, tutorial [here](https://doc.dpdk.org/guides/linux_gsg/intro.html)
 * Moongen Packet Generator, tutorial [here](https://github.com/emmericp/MoonGen)
 
+# XDP Results Validation
+
