@@ -1,0 +1,35 @@
+--- Makefile	2020-09-02 15:46:57.655285402 +0200
++++ Makefile.new	2020-09-02 15:46:47.167391835 +0200
+@@ -54,6 +54,10 @@
+ tprogs-y += ibumad
+ tprogs-y += hbm
+ 
++tprogs-y += xdp_map_access
++tprogs-y += xdp_csum
++tprogs-y += xdp_fw
++
+ # Libbpf dependencies
+ LIBBPF = $(TOOLS_PATH)/lib/bpf/libbpf.a
+ 
+@@ -110,6 +114,10 @@
+ ibumad-objs := bpf_load.o ibumad_user.o $(TRACE_HELPERS)
+ hbm-objs := bpf_load.o hbm.o $(CGROUP_HELPERS)
+ 
++xdp_map_access-objs := xdp_map_access_user.o
++xdp_csum-objs := xdp_csum_user.o
++xdp_fw-objs := xdp_fw_user.o
++
+ # Tell kbuild to always build the programs
+ always-y := $(tprogs-y)
+ always-y += sockex1_kern.o
+@@ -171,6 +179,10 @@
+ always-y += hbm_edt_kern.o
+ always-y += xdpsock_kern.o
+ 
++always-y += xdp_map_access_kern.o
++always-y += xdp_csum_kern.o
++always-y += xdp_fw_kern.o
++
+ ifeq ($(ARCH), arm)
+ # Strip all except -D__LINUX_ARM_ARCH__ option needed to handle linux
+ # headers when arm instruction set identification is requested.
