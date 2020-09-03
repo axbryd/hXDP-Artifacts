@@ -17,11 +17,12 @@ $ git clone https://github.com/axbryd/hXDP-Artifacts.git
 In this section, we will depict the hardware and software infrastructure needed to validate the results on the paper.
 
 ## Hardware Requirements
-
-* A [NetFPGA-SUME](https://github.com/NetFPGA/NetFPGA-SUME-public/wiki/Getting-Started-Guide) Board connected to the host system's PCI-e bus
-* A 4x10Gbe NIC (in our tests, we've used a ...)
-
-The two boards need to be conncted back-back-to-back
+We provide full-acces to our testbed with a NetFPGA-SUME and a machine used for traffic generation. SSH Public and Private Keys are provided in the HotCRP submission form. To install the keys
+To access:
+```(bash)
+$ ssh osdi20-aec@capoccino.netgroup.uniroma2.it
+```
+To add the new keys to your agent, follow [this](https://www.ssh.com/ssh/add) guide.
 
 ## Software Requirements
 * Ubuntu 16.04 LTS (any newer LTS version of Ubuntu should do the job)
