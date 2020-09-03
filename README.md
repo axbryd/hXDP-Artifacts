@@ -25,12 +25,12 @@ $ ssh osdi20-aec@capoccino.netgroup.uniroma2.it
 ```
 To add the new keys to your agent, follow [this](https://www.ssh.com/ssh/add) guide.
 
+We also provide the implementation's HDL code (here)[https://www.dropbox.com/s/kven1zrdnwi0n0a/OSDI20_hXDP.xpr.zip?dl=0]
+
 ## Software Requirements
 * Ubuntu 16.04 LTS (any newer LTS version of Ubuntu should do the job)
-* The NetFPGA SUME development environment following the information available at https://github.com/NetFPGA/NetFPGA-SUME-public/wiki
-* Xilinx Vivado Design Suite 2016.4 (for programming tools)
-* Data Plane Development Kit, tutorial [here](https://doc.dpdk.org/guides/linux_gsg/intro.html)
-* Moongen Packet Generator, tutorial [here](https://github.com/emmericp/MoonGen)
+* Xilinx Vivado Design Suite 2016.4 (if you wish to re-instantiate the original HW project with sources, otherwise in the test machine you will find the synthesized bytecode)
+
 
 # XDP Results Validation
 In this section we will describe how to replicate the XDP Linux baseline tests. 
