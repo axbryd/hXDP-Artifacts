@@ -144,3 +144,32 @@ osdi20-aec@nino:~$ tmux a
 ```
 Here, you're presented with **4** panes. If you're unsure on how to use tmux, [here](https://tmuxcheatsheet.com/) is a quick reference.
  ## Program the NetFPGA
+ In pane #0, execute (with sample output):
+ ```(bash)
+ osdi20-aec@nino:~/0_program_FPGA$ ./program_fpga.sh top_25_05_2020.bit 
+
+****** Xilinx Microprocessor Debugger (XMD) Engine
+****** XMD v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+WARNING: XMD has been deprecated and will be removed in future.
+         XSDB replaces XMD and provides additional functionality.
+         We recommend you switch to XSDB for commandline debugging.
+         Please refer to SDK help for more details.
+
+XMD% 
+XMD% Configuring Device 1 (xc7vx690t) with Bitstream -- top_25_05_2020.bit
+................10...............20...............30................40...............50...............60...............70................80...............90...............Successfully downloaded bit file.
+
+JTAG chain configuration
+--------------------------------------------------
+Device   ID Code        IR Length    Part Name
+ 1       33691093           6        xc7vx690t
+ 2       16d7e093           8        xc2c512
+
+0
+XMD% 
+Completed rescan PCIe information !
+
+ ```
