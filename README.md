@@ -142,3 +142,5 @@ Once you're in, attach to the *tmux* session we've prepared for the AEC:
 ```(bash)
 osdi20-aec@nino:~$ tmux a
 ```
+Here, you're presented with **4** panes. If you're unsure on how to use tmux, [here](https://tmuxcheatsheet.com/) is a quick reference.
+ ## Program the NetFPGA
