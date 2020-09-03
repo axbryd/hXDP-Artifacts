@@ -134,4 +134,11 @@ execute prog:
 traffic type: ipv4, UDP
 
 # hXDP Results validation
-To replicate the results, access our machine at *capoccino.netgroup.uniroma2.it**.
+To replicate the results, access our machine at *capoccino.netgroup.uniroma2.it*:
+```(bash)
+$ ssh osdi20-aec@capoccino.netgroup.uniroma2.it
+```
+Once you're in, attach to the *tmux* session we've prepared for the AEC:
+```(bash)
+osdi20-aec@nino:~$ tmux a
+```
