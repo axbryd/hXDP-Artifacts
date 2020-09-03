@@ -48,12 +48,12 @@ Results provided in the paper have been obtained using the following hardware/so
 
 In the following how-to we will assume that the Linux kernel source code has been downloaded in <kernel_source> directory and this repo has been cloned into <hXDP_repo>. For each test program we also indicate the characteristic of the network traffic used during the experiments 
 
-## kernel setup
+## Kernel setup
 
 download linux-5.6.4 source code from https://mirrors.edge.kernel.org/pub/linux/kernel/v5.x/linux-5.6.4.tar.gz
 extract, compile and run the kernel (https://kernelnewbies.org/KernelBuild)
 
-## prepare and compile xdp programs
+## Prepare and compile xdp programs
 
 update the Linux XDP samples with the additional programs
 
@@ -67,7 +67,7 @@ patch the Makefile for in tree compilation of the additional programs
 patch Makefile Makefile.patch
 ```
 
-## run the experiments
+## Run the experiments
 
 ### xdp1
 
@@ -132,3 +132,6 @@ execute prog:
 ./xdp_fw
 ```
 traffic type: ipv4, UDP
+
+# hXDP Results validation
+To replicate the results, access our machine at *capoccino.netgroup.uniroma2.it**.
