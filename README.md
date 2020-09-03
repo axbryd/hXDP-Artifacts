@@ -17,7 +17,8 @@ $ git clone https://github.com/axbryd/hXDP-Artifacts.git
 In this section, we will depict the hardware and software infrastructure needed to validate the results on the paper.
 
 ## Hardware Requirements
-We provide full-acces to our testbed with a NetFPGA-SUME and a machine used for traffic generation. SSH Public and Private Keys are provided in the HotCRP submission form. To install the keys
+We provide full-acces to our testbed with a NetFPGA-SUME and a machine used for traffic generation. SSH Public and Private Keys are provided in the HotCRP submission form.
+
 To access:
 ```(bash)
 $ ssh osdi20-aec@capoccino.netgroup.uniroma2.it
