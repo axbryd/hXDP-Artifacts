@@ -25,7 +25,7 @@ $ ssh osdi20-aec@capoccino.netgroup.uniroma2.it
 ```
 To add the new keys to your agent, follow [this](https://www.ssh.com/ssh/add) guide.
 
-We also provide the implementation's HDL code (here)[https://www.dropbox.com/s/kven1zrdnwi0n0a/OSDI20_hXDP.xpr.zip?dl=0]
+We also provide the implementation's HDL code [here](https://www.dropbox.com/s/kven1zrdnwi0n0a/OSDI20_hXDP.xpr.zip?dl=0)
 
 ## Software Requirements
 * Ubuntu 16.04 LTS (any newer LTS version of Ubuntu should do the job)
