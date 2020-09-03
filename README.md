@@ -29,10 +29,10 @@ To add the new keys to your agent, follow [this](https://www.ssh.com/ssh/add) gu
 ## Software Requirements
 * Ubuntu 16.04 LTS (any newer LTS version of Ubuntu should do the job)
 
-If you want to synthesize the bytecode for hXDP on your own, you can download the Vivado project [here (https://www.dropbox.com/s/kven1zrdnwi0n0a/OSDI20_hXDP.xpr.zip?dl=0)
-You'll need to install also Xilinx Vivado Design Suite 2016.4 
-
-We provide the implementation's HDL code . Synthesis can take up to 3 hours! 
+If you want to synthesize the bitstream for hXDP on your own, you can download the Vivado project [here].(https://www.dropbox.com/s/kven1zrdnwi0n0a/OSDI20_hXDP.xpr.zip?dl=0)
+You'll need to install also Xilinx Vivado Design Suite 2016.4 and obtain licenses, as explained [here](https://github.com/NetFPGA/NetFPGA-SUME-public/wiki/Getting-Started-Guide).
+Synthesis can take up to 3 hours! 
+If you want the fast path, we provide the bitstream inside our testbed already.
 
 
 # XDP Results Validation
