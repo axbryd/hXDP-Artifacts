@@ -143,7 +143,7 @@ Once you're in, attach to the *tmux* session we've prepared for the AEC:
 osdi20-aec@nino:~$ tmux a
 ```
 Here, you're presented with **4** panes. If you're unsure on how to use tmux, [here](https://tmuxcheatsheet.com/) is a quick reference.
- ## Program the NetFPGA
+ ## Program the NetFPGA-SUME
  In pane #0, execute (with sample output):
  ```(bash)
  osdi20-aec@nino:~/0_program_FPGA$ ./program_fpga.sh top_25_05_2020.bit 
@@ -173,3 +173,9 @@ XMD%
 Completed rescan PCIe information !
 
  ```
+ ## Start the hXDP monitor program
+ In pane #1, launch:
+ ```(bash)
+ osdi20-aec@nino:~/1_datapath_monitor$ ./hXDP_monitor.py 
+ ```
+ # Run tests
