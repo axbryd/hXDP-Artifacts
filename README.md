@@ -25,7 +25,6 @@ $ ssh osdi20-aec@capoccino.netgroup.uniroma2.it
 ```
 To add the new keys to your agent, follow [this](https://www.ssh.com/ssh/add) guide.
 
-
 ## Software Requirements
 * Ubuntu 16.04 LTS (any newer LTS version of Ubuntu should do the job)
 
@@ -139,6 +138,9 @@ execute prog:
 traffic type: ipv4, UDP
 
 # hXDP Results validation
+
+Our testbed is composed by two machines: *nino* and *ercole*. The first one is the one you access trough *ssh*, while the latter is attached to pane #3 of the *tmux* session.
+
 To replicate the results, access our machine at *capoccino.netgroup.uniroma2.it*:
 ```(bash)
 $ ssh osdi20-aec@capoccino.netgroup.uniroma2.it
@@ -184,4 +186,4 @@ Completed rescan PCIe information !
  ```(bash)
  osdi20-aec@nino:~/1_datapath_monitor$ ./hXDP_monitor.py 
  ```
- # Run tests
+ # Run Microbenchmarks
