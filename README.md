@@ -264,8 +264,10 @@ For the next benchmarks, since the steps are the same except for the ROM to be l
 # Run XDP examples on hXDP
 Here we describe how to run the same examples depicted in the software section on hXDP. Before doing this, we describe how to *optimize* the original eBPF bytecode to run on Sephirot. Tests are runned as reported in the XDP Drop microbenchmark.
 
-## Optimization
+## Optimization (optional)
 This is an optional step since all the ROMs are loaded inside the testbed.
+
+You can find the parallelizer inside the relevant folder in this repo. To optimaze all the examples we've seen in the previous section, launch ```./parallelize_all.sh```. You find the generated output products inside the ```out``` sub-folder.
 
 ## xdp1
 * ROM: ```xdp1.bin.out```
