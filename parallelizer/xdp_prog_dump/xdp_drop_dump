@@ -1,0 +1,21 @@
+; int xdp_flowblaze(struct CTXTYPE *ctx) { // Line  30
+   0:	b7 01 00 00 00 00 00 00 	r1 = 0
+; int key = 0; // Line  38
+   1:	63 1a fc ff 00 00 00 00 	*(u32 *)(r10 - 4) = r1
+; counter = bpf_map_lookup_elem((void *)bpf_pseudo_fd(1, -1), &key); // Line  39
+   2:	18 11 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 	ld_pseudo	r1, 1, 4294967295
+   4:	bf a2 00 00 00 00 00 00 	r2 = r10
+; int xdp_flowblaze(struct CTXTYPE *ctx) { // Line  31
+   5:	07 02 00 00 fc ff ff ff 	r2 += -4
+; counter = bpf_map_lookup_elem((void *)bpf_pseudo_fd(1, -1), &key); // Line  39
+   6:	85 00 00 00 01 00 00 00 	call 1
+; if (counter) // Line  41
+   7:	15 00 03 00 00 00 00 00 	if r0 == 0 goto +3
+; *counter += 1; // Line  42
+   8:	61 01 00 00 00 00 00 00 	r1 = *(u32 *)(r0 + 0)
+   9:	07 01 00 00 01 00 00 00 	r1 += 1
+  10:	63 10 00 00 00 00 00 00 	*(u32 *)(r0 + 0) = r1
+; return XDP_DROP; // Line  44
+  11:	b7 00 00 00 01 00 00 00 	r0 = 1
+  12:	95 00 00 00 00 00 00 00 	exit
+
