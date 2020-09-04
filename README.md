@@ -186,6 +186,36 @@ Completed rescan PCIe information !
  ```(bash)
  osdi20-aec@nino:~/1_datapath_monitor$ ./hXDP_monitor.py 
  ```
+ 
+ ## Prepare the traffic generation machine
+ Navigate to pane #3 and launch ```./0_DPDK_bind_ifaces.sh```. The output should be:
+ ```
+ Network devices using DPDK-compatible driver
+============================================
+0000:03:00.0 'Ethernet 10G 2P X520 Adapter 154d' drv=igb_uio unused=ixgbe
+0000:03:00.1 'Ethernet 10G 2P X520 Adapter 154d' drv=igb_uio unused=ixgbe
+0000:81:00.0 'Ethernet 10G 2P X520 Adapter 154d' drv=igb_uio unused=ixgbe
+0000:81:00.1 'Ethernet 10G 2P X520 Adapter 154d' drv=igb_uio unused=ixgbe
+
+Network devices using kernel driver
+===================================
+0000:01:00.0 'I350 Gigabit Network Connection 1521' if=eno1 drv=igb unused=igb_uio *Active*
+0000:01:00.1 'I350 Gigabit Network Connection 1521' if=eno2 drv=igb unused=igb_uio
+0000:01:00.2 'I350 Gigabit Network Connection 1521' if=eno3 drv=igb unused=igb_uio
+0000:01:00.3 'I350 Gigabit Network Connection 1521' if=eno4 drv=igb unused=igb_uio
+
+No 'Crypto' devices detected
+============================
+
+No 'Eventdev' devices detected
+==============================
+
+No 'Mempool' devices detected
+=============================
+
+No 'Compress' devices detected
+==============================
+ ```
  # Run Microbenchmarks
  In this section, we describe how to recreate the microbenchmarks results depicted in the paper.
  ## XDP Drop
@@ -209,4 +239,5 @@ Reaing from 0 Sephirot Core
 0x8 :    0000000000000000 | 0000000000000000 | 0000000000000000 | 0000000000000000 |
 0x9 :    0000000000000000 | 0000000000000000 | 0000000000000000 | 0000000000000000 |
  ```
-Where *10* is the number of Very-Long Instructio Word instructions to be fetched form the memory.
+Where *10* is the number of Very-Long Instruction Words to be fetched form the memory.
+We can now move to pane #3 to generate traffic:
