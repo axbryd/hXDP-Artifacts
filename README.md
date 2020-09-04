@@ -139,7 +139,7 @@ traffic type: ipv4, UDP
 
 # hXDP Results validation
 
-Our testbed is composed by two machines: *nino* and *ercole*. The first one is the one you access trough *ssh*, while the latter is attached to pane #3 of the *tmux* session.
+Our testbed is composed by two machines: *nino* and *ercole*. The first one is the one you access trough *ssh*, while the latter is attached to pane #3 of the *tmux* session created below.
 
 To replicate the results, access our machine at *capoccino.netgroup.uniroma2.it*:
 ```(bash)
