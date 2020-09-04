@@ -11,7 +11,7 @@ In addition we provide access to a machine equipped with a NetFPGA and configure
 # Repo organization 
 
 * [hXDP datapath](https://zenodo.org/record/4015082#.X1I-FGczadY): link to Zenodo repo where it is possible to download the code necessary  to synthesize the hXDP bitstream. The size of the project is relatively big so the source code is not include in this repo.
-* **parallelizer**: this directory contains the hXPD compiler and the [XDP bytecode](.parallelizer/xdp_prog_dump/) used as input fo the compiler .
+* **parallelizer**: this directory contains the hXPD compiler and the [XDP bytecode](parallelizer/xdp_prog_dump/) used as input fo the compiler .
 * **testbed_scripts**: this directory contains script that can be used to replicate the paper experiments on our testbed, the compiled [XDP roms](testbed_scripts/2_datapath_programming/SPH_roms) to be executed on the hXDP datapath and the [hXDP bitcode](testbed_scripts/0_program_FPGA/top_25_05_2020.bit).
 * **xdp_progs**: this directory contains the source code of the XDP programs used in the evaluation that are not included in the Linux kernel source tree.
 
@@ -56,7 +56,7 @@ In order to compile the hXDP roms the hXDP compiler needs as input the xdp progr
 ```
 llvm-objdump -S <xdp_prog>.o > <xdp_prog>.bytecode
 ```
-Bytecode of xdp programs used in the paper evaluation are already provided [here](.parallelizer/xdp_prog_dump/) 
+Bytecode of xdp programs used in the paper evaluation are already provided [here](parallelizer/xdp_prog_dump/) 
 
 ### Generate XDP programs ROM 
 ```
@@ -73,7 +73,7 @@ ROMs used in the paper evaluatio are already provided [here](testbed_scripts/2_d
 ./testbed_scripts/2_datapath_programming/inject_sephirot_imem.py ./testbed_scripts/2_datapath_programming/SPH_roms/XDP_DROP.bin
 ```
 ### Read/Write maps
-Access to maps from userspace is provided through a simple script (reads) and "manually" (writes). The integration of hXDP with standard Linux tools, such as [bpftools](), for map access is an ongoing work and will be included in the next release.
+Access to maps from userspace is provided through a simple script (reads) and "manually" (writes). The integration of hXDP with standard Linux tools, such as [bpftools](https://www.mankier.com/8/bpftool), for map access is an ongoing work and will be included in the next release.
 
 #### read
 
@@ -81,18 +81,18 @@ Access to maps from userspace is provided through a simple script (reads) and "m
 ./testbed_scripts/2_datapath_programming/dump_maps.py <n>
 ```
 
-where \<n> is the number of desired output lines
+Where \<n> is the number of desired output lines
 
 #### write
-write 32 bit of content (-w \<content>) ant the specified address (-a \<address>) 
+Write 32 bit of content (-w \<content>) ant the specified address (-a \<address>) 
 ```
 ./testbed_scripts/2_datapath_programming/rwaxi -a 0x80010000 -w 0x2
 ```
-write the commit bit to finalize the write
+Write the commit bit to finalize the write
 ```
 ./testbed_scripts/2_datapath_programming/rwaxi -a 0x800100ff -w 0x1
 ```
-check the result
+Check the result
 ```
 ./testbed_scripts/2_datapath_programming/dump_maps.py 1
 ```
