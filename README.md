@@ -143,13 +143,14 @@ To replicate the results, access our machine at *capoccino.netgroup.uniroma2.it*
 ```(bash)
 $ ssh osdi20-aec@capoccino.netgroup.uniroma2.it
 ```
-Once you're in, attach to the *tmux* session we've prepared for the AEC:
+Once you're in, create the the *tmux* session we've prepared for the AEC:
 ```(bash)
-osdi20-aec@nino:~$ tmux a
+osdi20-aec@nino:~$ ./launch_tmmux.sh
 ```
 Here, you're presented with **4** panes. If you're unsure on how to use tmux, [here](https://tmuxcheatsheet.com/) is a quick reference.
  ## Program the NetFPGA-SUME
- In pane #0, execute (with sample output):
+ In pane #0, execute ```./program_fpga.sh top_25_05_2020.bit```:
+ 
  ```(bash)
  osdi20-aec@nino:~/0_program_FPGA$ ./program_fpga.sh top_25_05_2020.bit 
 
