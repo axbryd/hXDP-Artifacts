@@ -1,25 +1,29 @@
 # hXDP repo
 
-This repository contains the artifact presented in "hXDP: Efficient Software Packet Processing on FPGA NICs":
+This repository contains the artifact for the paper "hXDP: Efficient Software Packet Processing on FPGA NICs":
 
 * **hXDP datapath** implementation on NetFPGA
 * **optimizing-compiler** used to translate eBPF bytecode to the hXDP extended eBPF Instruction-set 
 
 We provide the necessary documentation and tools to replicate the paper results. 
-In addition we provide access to a machine equipped with a NetFPGA and configured to execute the experiments 
+In addition we provide access to a machine equipped with a NetFPGA and configured to execute the experiments. 
+
+To replicate the results presented in the paper is it possible to follow two different paths:
+* [access our pre-configured testbed and use the preconfigured environment](#Experiments-replication) 
+* [follow the README and configure hXDP from scratch](#Requisites)
 
 # Repo organization 
 
-* [hXDP datapath](https://zenodo.org/record/4015082#.X1I-FGczadY): link to Zenodo repo where it is possible to download the code necessary  to synthesize the hXDP bitstream. The size of the project is relatively big so the source code is not include in this repo.
-* **parallelizer**: this directory contains the hXPD compiler and the [XDP bytecode](parallelizer/xdp_prog_dump/) used as input fo the compiler .
-* **testbed_scripts**: this directory contains script that can be used to replicate the paper experiments on our testbed, the compiled [XDP roms](testbed_scripts/2_datapath_programming/SPH_roms) to be executed on the hXDP datapath and the [hXDP bitcode](testbed_scripts/0_program_FPGA/top_25_05_2020.bit).
+* [hXDP datapath](https://zenodo.org/record/4015082#.X1I-FGczadY): link to Zenodo repo where it is possible to download the code necessary  to synthesize the hXDP bitstream. The size of the project is relatively big so the source code is not included in this repo.
+* **parallelizer**: this directory contains the hXPD compiler and the [XDP bytecode](parallelizer/xdp_prog_dump/) used as input for the compiler .
+* **testbed_scripts**: this directory contains scripts that can be used to replicate the paper experiments on our testbed, the compiled [XDP roms](testbed_scripts/2_datapath_programming/SPH_roms) to be executed on the hXDP datapath and the [hXDP bitcode](testbed_scripts/0_program_FPGA/top_25_05_2020.bit).
 * **xdp_progs**: this directory contains the source code of the XDP programs used in the evaluation that are not included in the Linux kernel source tree.
 
 # Requisites
-## Hardware
 
-A NetFPGA-SUME board is required to evaluate the artifact. 
-To facilitate the testing of the artifacts we provide full-acces to our testbed with a NetFPGA-SUME and a machine used for traffic generation. SSH Public and Private Keys are provided in the HotCRP submission form.
+To facilitate the testing of the artifacts we provide full-acces to our testbed with a NetFPGA-SUME and a machine used for traffic generation. The machine also includes the the synthetized hXDP bitstream. 
+
+SSH Public and Private Keys are provided in the HotCRP submission form.
 
 To access:
 ```(bash)
@@ -27,7 +31,15 @@ $ ssh osdi20-aec@capoccino.netgroup.uniroma2.it
 ```
 To add the new keys to your agent, follow [this](https://www.ssh.com/ssh/add) guide.
 
+Requisites for testing hXDP on your own are provided below.
+
+## Hardware
+
+A NetFPGA-SUME board is required to evaluate the artifact. 
+
+
 ## Software
+
 * Ubuntu 16.04 LTS (any newer LTS version of Ubuntu should do the job)
 * ```python 3```
     * Packages: ```networkx```, ```transitions```
@@ -38,7 +50,7 @@ If you want to synthesize the bitstream for hXDP on your own, you can download t
 You'll need to install also Xilinx Vivado Design Suite 2016.4 and obtain licenses, as explained [here](https://github.com/NetFPGA/NetFPGA-SUME-public/wiki/Getting-Started-Guide).
 Synthesis can take up to 3 hours!
 
-If you want the fast path, we provide the bitstream inside our testbed already.
+
 
 # Install
 
@@ -56,13 +68,15 @@ In order to compile the hXDP roms the hXDP compiler needs as input the xdp progr
 ```
 llvm-objdump -S <xdp_prog>.o > <xdp_prog>.bytecode
 ```
-Bytecode of xdp programs used in the paper evaluation are already provided [here](parallelizer/xdp_prog_dump/) 
+If you want to skip this step, the Bytecodes of xdp programs used in the paper evaluation are already provided [here](parallelizer/xdp_prog_dump/) 
 
 ### Generate XDP programs ROM 
+
 ```
 python3 ./parallelizer/parallelizer.py -i <xdp_prog>.o
 ```
-ROMs used in the paper evaluatio are already provided [here](testbed_scripts/2_datapath_programming/SPH_roms)
+
+If you want to skip this step, ROMs used in the paper evaluation are already provided [here](testbed_scripts/2_datapath_programming/SPH_roms)
 
 ### Load hXDP datapath bitstream on the NetFPGA
 ```
@@ -212,7 +226,7 @@ ARRIVAL RATE: 56.584462 Mpps
 DROP RATE: 22.41349 Mpps
 TX RATE: 0.0 Mpps
 ```
-For the next benchmarks, since the steps are the same except for the ROM to be loaded and the test type, we just point out this details for the sake of brevity.
+For the next benchmarks, since the steps are the same except for the ROM to be loaded and the test type, we just point out these details for the sake of brevity.
 
 ### XDP Drop w/ early exit
 * ROM: ```XDP_DROP_early_exit.bin```
@@ -223,12 +237,12 @@ For the next benchmarks, since the steps are the same except for the ROM to be l
 * Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
 
 ## Run XDP examples on hXDP
-Here we describe how to run the same examples depicted in the software section on hXDP. Before doing this, we describe how to *compile* and *optimize* the original eBPF bytecode to run on Sephirot. Tests are runned as reported in the XDP Drop microbenchmark.
+Here we describe how to run the same examples depicted in the software section on hXDP. Before doing this, we describe how to *compile* and *optimize* the original eBPF bytecode to run on Sephirot. Tests are run as reported in the XDP Drop microbenchmark.
 
 ### Compilation - Optimization (optional)
 This is an optional step since all the ROMs are provided in the repo and inside the testbed.
 
-You can find the parallelizer inside the relevant folder in this repo. To compile and optimize all the examples we've seen in the previous section, launch ```./parallelize_all.sh```. You find the generated output products inside the ```out``` sub-folder.
+You can find the parallelizer inside the relevant folder in this repo. To compile and optimize all the examples we've seen in the previous section, run ```./parallelize_all.sh```. You find the generated output products inside the ```out``` sub-folder.
 
 ### xdp1
 * ROM: ```xdp1.bin.out```
