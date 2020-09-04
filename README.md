@@ -265,3 +265,4 @@ For the next benchmarks, since the steps are the same except for the ROM to be l
 Here we describe how to run the same examples depicted in the software section on hXDP. Before doing this, we describe how to *optimize* the original eBPF bytecode to run on Sephirot.
 
 ## Optimization
+This is an optional step since all the ROMs are loaded inside the testbed.
