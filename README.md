@@ -260,3 +260,8 @@ For the next benchmarks, since the steps are the same except for the ROM to be l
 ## XDP TX w/ early exit
 * ROM: ```XDP_TX_early_exit.bin```
 * Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
+
+# Run XDP examples on hXDP
+Here we describe how to run the same examples depicted in the software section on hXDP. Before doing this, we describe how to *optimize* the original eBPF bytecode to run on Sephirot.
+
+## Optimization
