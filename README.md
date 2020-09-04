@@ -240,4 +240,14 @@ Reaing from 0 Sephirot Core
 0x9 :    0000000000000000 | 0000000000000000 | 0000000000000000 | 0000000000000000 |
  ```
 Where *10* is the number of Very-Long Instruction Words to be fetched form the memory.
+
 We can now move to pane #3 to generate traffic:
+
+Moving on pane #1, we should see the datapath responding:
+```
+RECEIVED PACKETS: 446495634 pkts
+XDP_DROP OCCURENCIES: 180722170 pkts
+ARRIVAL RATE: 56.584462 Mpps
+DROP RATE: 22.41349 Mpps
+TX RATE: 0.0 Mpps
+```
