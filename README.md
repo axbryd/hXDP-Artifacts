@@ -241,7 +241,7 @@ Reaing from 0 Sephirot Core
  ```
 Where *10* is the number of Very-Long Instruction Words to be fetched form the memory.
 
-We can now move to pane #3 to generate traffic:
+We can now move to pane #3 to generate traffic ```osdi20-aec@ercole:~/3_traffic_generation$ ./1_throughput_test_64.sh```.
 
 Moving on pane #1, we should see the datapath responding:
 ```
