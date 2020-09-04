@@ -251,3 +251,8 @@ ARRIVAL RATE: 56.584462 Mpps
 DROP RATE: 22.41349 Mpps
 TX RATE: 0.0 Mpps
 ```
+For the next benchmarks, since the steps are the same except for the ROM to be loaded and the test type, we just point out this details for the sake of brevity.
+
+## XDP Drop w/ early exit
+* ROM: ```XDP_DROP_early_exit.bin```
+* Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
