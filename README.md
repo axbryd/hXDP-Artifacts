@@ -187,3 +187,9 @@ Completed rescan PCIe information !
  osdi20-aec@nino:~/1_datapath_monitor$ ./hXDP_monitor.py 
  ```
  # Run Microbenchmarks
+ In this section, we describe how to recreate the microbenchmarks results depicted in the paper.
+ ## XDP Drop
+ In pane #2, let's program Sephirot's memory with the relevant ROM file, containing the XDP Drop program:
+ ```
+ osdi20-aec@nino:~/2_datapath_programming$ ./inject_sephirot_imem.py SPH_roms/XDP_DROP.bin
+ ```
