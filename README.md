@@ -255,4 +255,8 @@ For the next benchmarks, since the steps are the same except for the ROM to be l
 
 ## XDP Drop w/ early exit
 * ROM: ```XDP_DROP_early_exit.bin```
+* Test: ```1_throughput_test_64.sh```
+
+## XDP TX w/ early exit
+* ROM: ```XDP_TX_early_exit.bin```
 * Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
