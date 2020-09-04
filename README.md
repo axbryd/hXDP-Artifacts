@@ -262,9 +262,37 @@ For the next benchmarks, since the steps are the same except for the ROM to be l
 * Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
 
 # Run XDP examples on hXDP
-Here we describe how to run the same examples depicted in the software section on hXDP. Before doing this, we describe how to *optimize* the original eBPF bytecode to run on Sephirot.
+Here we describe how to run the same examples depicted in the software section on hXDP. Before doing this, we describe how to *optimize* the original eBPF bytecode to run on Sephirot. Tests are runned as reported in the XDP Drop microbenchmark.
 
 ## Optimization
 This is an optional step since all the ROMs are loaded inside the testbed.
 
+## xdp1
+* ROM: ```xdp1.bin.out```
+* Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
 
+
+## xdp2
+* ROM: ```xdp1.bin.out```
+* Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
+
+## xdp_adjust_tail
+
+
+## xdp_router_ipv4
+* ROM: ```xdp_router_ipv4.bin.out```
+* Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
+
+## xdp_rxq_info
+* ROM: ```xdp_rxq_info.bin.out```
+* Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
+
+## xdp_tx_iptunnel
+
+## xdp_redirect_map
+* ROM: ```xdp_redirect_map_kern.bin.out```
+* Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
+
+## simple_firewall
+* ROM: ```nec_udp_firewall.bin.out```
+* Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
