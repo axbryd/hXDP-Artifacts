@@ -98,11 +98,14 @@ Access to maps from userspace is provided through a simple script (reads) and "m
 Where \<n> is the number of desired output lines
 
 #### write
-Write 32 bit of content (-w \<content>) ant the specified address (-a \<address>) 
+Maps are writtent trough the AXI-Lite protocol. We commit a 32-bit transaction, but since maps are 128-bit wide, we need to write to temporary 128-bit buffers and then committing the whole 128-bit line.
+
+Write 32 bit of content (-w \<content>) at the specified address (-a \<address>). The base address for the map's address space is 0x80010000.
+
 ```
 ./testbed_scripts/2_datapath_programming/rwaxi -a 0x80010000 -w 0x2
 ```
-Write the commit bit to finalize the write
+Assert the commit bit to finalize the write
 ```
 ./testbed_scripts/2_datapath_programming/rwaxi -a 0x800100ff -w 0x1
 ```
