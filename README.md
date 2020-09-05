@@ -257,7 +257,8 @@ You can find the parallelizer inside the relevant folder in this repo. To compil
 * Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
 
 ### xdp_adjust_tail
-
+* ROM: ```xdp_adjust_tail.bin.out```
+* Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
 
 ### xdp_router_ipv4
 * ROM: ```xdp_router_ipv4.bin.out```
@@ -268,6 +269,8 @@ You can find the parallelizer inside the relevant folder in this repo. To compil
 * Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
 
 ### xdp_tx_iptunnel
+* ROM: ```xdp_tx_iptunnel.bin.out```
+* Test: ```1_throughput_test_64.sh, 2_latency_minimum_size.sh, 3_latency_maximum_size.sh```
 
 ### xdp_redirect_map
 * ROM: ```xdp_redirect_map_kern.bin.out```
