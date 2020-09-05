@@ -9,7 +9,7 @@ We provide the necessary documentation and tools to replicate the paper results.
 In addition we provide access to a machine equipped with a NetFPGA and configured to execute the experiments. 
 
 To replicate the results presented in the paper is it possible to follow two different paths:
-* [access our pre-configured testbed and use the preconfigured environment](#Experiments-replication) 
+* [access our pre-configured testbed and use our environment](#Experiments-replication) 
 * [follow the README and configure hXDP from scratch](#Requisites)
 
 # Repo organization 
