@@ -696,19 +696,24 @@ class Optimizer:
                 conflicting = self.reg_cache.get_conflicting(inst[OUTPUT][SYM_NAME], row)
 
                 if conflicting is not None and conflicting[REG] == inst[OUTPUT][SYM_NAME] and \
-                        inst[ORIG_POS] != conflicting[ORG_LIVE]:
+                        inst[ORIG_POS] != conflicting[ORG_LIVE] and \
+                        conflicting[REG] != self.bound_check_cache["pkt_act_reg"]:
 
                     # excludes subseuquent updates on global registers (used by many blocks)
-                    if not self.__conf_starts_before_blck(blck, conflicting) or \
+                    if not self.__conf_starts_before_blck(blck, conflicting) and \
                             not self.__conf_ends_after_blck(blck, conflicting):
                         # try to rename output register
                         old_reg = inst[OUTPUT][SYM_NAME]
                         unav = set(self.reg_cache.get_unavailable(row))
                         try:
-                            self.__rename_registers([n], blck, unav)
+                            deps = [n]
+                            deps.extend(list(filter(lambda x: x != len(blck[INSTRUCTIONS]) - 1,
+                                        list(list(data_dep_g.successors(n))))))
+                            self.__rename_registers(deps, blck, unav)
                             self.reg_cache.ch_reg_name(old_reg, inst[OUTPUT][SYM_NAME], inst[ORIG_POS], row)
                         except:
                             # no register available, delaying instruction
+                            print(inst[INSTR_S])
                             assert conflicting[ROW_LIVE] is not None, "Unexpected out of block conflict, this may be " \
                                                                       "a bug "
                             lane, row = self.find_avail_row_lane_input_deps(b, data_dep_g,
@@ -1281,7 +1286,7 @@ class Optimizer:
                 if inp[SYM_NAME] == old_reg:
                     instr[INSTR_S] = self.modify_reg_str(instr[INSTR_S], old_reg, new_reg, only_in=True)
                     instr[INSTR_B] = modify_register(instr[INSTR_B], new_reg, SRC_SHIFT_MOD)
-                    instr[OUTPUT][SYM_NAME] = new_reg
+                    inp[SYM_NAME] = new_reg
 
                     if self.schedule[instr_id][LANE] is not None:
                         rt_inst = self.resource_table[self.schedule[instr_id][TIME]][self.schedule[instr_id][LANE]]

@@ -41,7 +41,7 @@ def print_parallelization_score(parallelization_score):
     print()
 
 
-files = [f for f in listdir("xdp_prog_dump/") if isfile(join("xdp_prog_dump/", f)) and f == "katran"]
+files = [f for f in listdir("xdp_prog_dump/") if isfile(join("xdp_prog_dump/", f)) and f == "xdp_adjust_tail"]
 
 mean_speedup = 0
 mean_unused_lanes = 0

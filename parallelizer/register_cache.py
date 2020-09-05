@@ -48,7 +48,6 @@ class RegisterCache:
                 if confl[ROW_LIVE] is None:
                     confl[ROW_LIVE] = row
 
-
     def change_block(self, blck_end):
         new_cache = []
         for i in self.reg_cache:

@@ -4,6 +4,6 @@ for file in ./xdp_prog_dump/*
 do
       python3 parallelizer.py -i "$file" &> /dev/null
 done
-rm -rf out
+rmdir out
 mkdir out
 mv ./xdp_prog_dump/*.out ./out

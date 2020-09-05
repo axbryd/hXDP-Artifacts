@@ -27,6 +27,5 @@ class Optimization(object):
         self.optimized_instructions.append(dict())
 
     def parse_instruction(self, instruction, instruction_id):
-        #print(instruction_id)
         self.instruction, self.instruction_id = instruction, instruction_id
         self.default_trigger()
