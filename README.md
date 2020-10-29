@@ -21,16 +21,6 @@ To replicate the results presented in the paper is it possible to follow two dif
 
 # Requisites
 
-To facilitate the testing of the artifacts we provide full-acces to our testbed with a NetFPGA-SUME and a machine used for traffic generation. The machine also includes the the synthetized hXDP bitstream. 
-
-SSH Public and Private Keys are provided in the HotCRP submission form.
-
-To access:
-```(bash)
-$ ssh osdi20-aec@capoccino.netgroup.uniroma2.it
-```
-To add the new keys to your agent, follow [this](https://www.ssh.com/ssh/add) guide.
-
 Requisites for testing hXDP on your own are provided below.
 
 ## Hardware
@@ -115,18 +105,6 @@ Check the result
 ```
 
 # Experiments replication
-
-Our testbed is composed by two machines: *nino* and *ercole*. The first one is the one you access trough *ssh*, while the latter is attached to pane #3 of the *tmux* session created below.
-
-To replicate the results, access our machine at *capoccino.netgroup.uniroma2.it*:
-```(bash)
-$ ssh osdi20-aec@capoccino.netgroup.uniroma2.it
-```
-Once you're in, create the the *tmux* session we've prepared for the AEC:
-```(bash)
-osdi20-aec@nino:~$ ./launch_tmux.sh
-```
-Here, you're presented with **4** panes. If you're unsure on how to use tmux, [here](https://tmuxcheatsheet.com/) is a quick reference.
 
 ## Program the NetFPGA-SUME
  In pane #0, execute ```./program_fpga.sh top_25_05_2020.bit```:
